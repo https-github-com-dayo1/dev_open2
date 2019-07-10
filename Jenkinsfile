@@ -1,22 +1,11 @@
 pipeline {
-  agent any
+  agent { label 'jdk9'}
   stages {
-    stage('say-hello2') {
+    stage('\'Say Hallo!\'') {
       steps {
-        sh '''pipeline {
-  agent {
-    label \'jdk9\'
-  }
-  stages {
-    stage(\'\\\'Say Hallo!\\\'\') {
-      steps {
-        echo \'Hallo World!\'
-        sh \'java -version\'
+        echo 'Hallo World!'
+        sh 'java -version'
       }
     }
   }
-}'''
-        }
-      }
-    }
-  }
+}
